@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KapseAI - DeepThink</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: black;
+        }
+
+        @media only screen and (max-width: 639px) {
+            .output {
+                width: 340px;
+                margin: auto;
+            }
+        }
+
+        .output {
+            height: 78vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar bg-neutral text-neutral-content">
+        <button class="btn btn-ghost text-xl hover:border-black text-white shadow-none">KapseAI</button>
+    </div>
+    <form method="post" class="flex justify-center space-x-2 mb-5">
+        <input type="text" placeholder="Message KapseAI" name="question"
+            class="input input-neutral focus:outline-none text-white border-white border-2 h-13 sm:w-lg md:w-xl lg:w-2xl" />
+        <button class="btn shadow-none border-2 border-white text-white h-13" type="submit">-></button>
+    </form>
+    {% if answer %}
+    <div class="output sm:w-lg md:w-xl lg:w-2xl mx-auto h-auto text-white text-justify">
+        {{answer}}
+    </div>
+    {% endif %}
+</body>
+
+</html>
