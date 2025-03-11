@@ -7,7 +7,7 @@ app = Flask(__name__)
 def kapseAI(question):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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",
+        api_key="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",
     )
     completion = client.chat.completions.create(
         extra_headers={
@@ -31,4 +31,4 @@ def helloWorld():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
